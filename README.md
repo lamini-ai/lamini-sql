@@ -72,8 +72,8 @@ Then, run this command:
 ```
 
 ## Expected Outputs & Autosaved Data 🦙
-When you run the program, you should start seeing output of a `Seed Question`, from the original small dataset in [`seed_tasks.jsonl`](./seed_tasks.jsonl), and a `Novel Question`, which is a generated question based on that `Seed Question`.[^1]
-[^1]: The `Seed Questions` in the Lamini seed dataset are instructions (combination of questions and commands), based on the [spider](https://yale-lily.github.io/spider). The generated questions are similar in nature to those and therefore don't *have to* be questions. You can find the seed dataset at [`data/train_spider.json`](./data/train_spider.jsonl).
+When you run the program, you should start seeing output of a `Seed Question`, from the original small dataset in [`train_spider.json`](./data/spider/train_spider.json), and a `Novel Question`, which is a generated question based on that `Seed Question`.[^1]
+[^1]: The `Seed Questions` in the Lamini seed dataset are instructions (combination of questions and commands), based on the [spider](https://yale-lily.github.io/spider). The generated questions are similar in nature to those and therefore don't *have to* be questions. You can find the seed dataset at [`data/spider/train_spider.json`](./data/spider/train_spider.jsonl).
 ```
 ====== Seed Question =====
  question='Show all movie titles, years, and directors, ordered by budget.'
