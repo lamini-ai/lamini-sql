@@ -55,16 +55,29 @@ def generate_questions(start_index, batch_size, dataset):
             item = dataset[index % len(dataset)]
 
             print("====== Seed Question =====\n", item)
-            novel_question = llm(
+            novel_question = get_question(llm, item)
+            novel_question.question = parse(novel_question.question)
+            print("===== Novel Question =====\n", novel_question)
+            writer.write(novel_question.dict())
+
+
+def get_question(llm, item):
+
+    attempts = 5
+
+    for i in range(attempts):
+        try:
+            return llm(
                 input=item,
                 output_type=NovelQuestion,
                 temperature=0.7,
                 model_name="lamini/open",
                 max_tokens=32,
             )
-            novel_question.question = parse(novel_question.question)
-            print("===== Novel Question =====\n", novel_question)
-            writer.write(novel_question.dict())
+        except LlamaAPIError as e:
+            print("Lamini API error {i}, retrying")
+
+    raise RuntimeError("Too many Lamini API errors.")
 
 
 def parse(string):
