@@ -73,7 +73,7 @@ Then, run this command:
 
 ## Expected Outputs & Autosaved Data 🦙
 When you run the program, you should start seeing output of a `Seed Question`, from the original small dataset in [`train_spider.json`](./data/spider/train_spider.json), and a `Novel Question`, which is a generated question based on that `Seed Question`.[^1]
-[^1]: The `Seed Questions` in the Lamini seed dataset are instructions (combination of questions and commands), based on the [spider](https://yale-lily.github.io/spider). The generated questions are similar in nature to those and therefore don't *have to* be questions. You can find the seed dataset at [`data/spider/train_spider.json`](./data/spider/train_spider.jsonl).
+[^1]: The `Seed Questions` in the Lamini seed dataset are instructions (combination of questions and commands), based on the [spider](https://yale-lily.github.io/spider). The generated questions are similar in nature to those and therefore don't *have to* be questions. You can find the seed dataset at [`data/spider/train_spider.json`](./data/spider/train_spider.json).
 ```
 ====== Seed Question =====
  question='Show all movie titles, years, and directors, ordered by budget.'
@@ -97,7 +97,7 @@ It's poggers 💥
 ## Modify
 
 ### I want to use my own seed data
-We suggest creating your own dataset and changing the path to the [`train_spider.jsonl`](./data/spider/train_spider.jsonl) in `generate_data.py`(./generate_data.py) --- or you can replace  [`train_spider.jsonl`](./data/spider/train_spider.jsonl) with your own data in the same format. You can of course also modify how the data is loaded or write your own script with the `llama-llm` library (pssst, [API docs](https://lamini-ai.github.io/auth/)).
+We suggest creating your own dataset and changing the path to the [`train_spider.json`](./data/spider/train_spider.json) in `generate_data.py`(./generate_data.py) --- or you can replace  [`train_spider.json`](./data/spider/train_spider.json) with your own data in the same format. You can of course also modify how the data is loaded or write your own script with the `llama-llm` library (pssst, [API docs](https://lamini-ai.github.io/auth/)).
 
 ### I only want to generate questions (to start)
 In `generate_data.py`(./generate_data.py), you can just run `generate_questions`. This is a common use case for using human review after the question generation step to filter only the good ones for the next step of generating a response for each question.
