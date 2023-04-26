@@ -58,7 +58,7 @@ pip install -r requirements.txt
 Run the program, to start generating data 📊📊📊
 
 ```
-python3 generate_data.py
+python3 sql-autocomplete.py
 ```
 
 ### Using Docker 🐳
@@ -68,7 +68,7 @@ Make sure you have [docker](https://docs.docker.com/get-docker/) installed.
 Then, run this command:
 
 ```bash
-./run_generate_data_docker.sh
+./run-sql-autocomplete.sh
 ```
 
 ## Expected Outputs & Autosaved Data 🦙
@@ -97,13 +97,13 @@ It's poggers 💥
 ## Modify
 
 ### I want to use my own seed data
-We suggest creating your own dataset and changing the path to the [`train_spider.json`](./data/spider/train_spider.json) in `generate_data.py`(./generate_data.py) --- or you can replace  [`train_spider.json`](./data/spider/train_spider.json) with your own data in the same format. You can of course also modify how the data is loaded or write your own script with the `llama-llm` library (pssst, [API docs](https://lamini-ai.github.io/auth/)).
+We suggest creating your own dataset and changing the path to the [`train_spider.json`](./data/spider/train_spider.json) in `sql-autocomplete.py`(./sql-autocomplete.py) --- or you can replace  [`train_spider.json`](./data/spider/train_spider.json) with your own data in the same format. You can of course also modify how the data is loaded or write your own script with the `llama-llm` library (pssst, [API docs](https://lamini-ai.github.io/auth/)).
 
 ### I only want to generate questions (to start)
-In `generate_data.py`(./generate_data.py), you can just run `generate_questions`. This is a common use case for using human review after the question generation step to filter only the good ones for the next step of generating a response for each question.
+In `sql-autocomplete.py`(./sql-autocomplete.py), you can just run `generate_questions`. This is a common use case for using human review after the question generation step to filter only the good ones for the next step of generating a response for each question.
 
 ### I have my own instructions, and just want to generate responses
-In `generate_data.py`(./generate_data.py), you can just use the function `make_pairs` to create the question-response pairs. This is a common use case step to run this stage separately, e.g. after human review of the generated questions, or if there was an error at this step last time.
+In `sql-autocomplete.py`(./sql-autocomplete.py), you can just use the function `make_pairs` to create the question-response pairs. This is a common use case step to run this stage separately, e.g. after human review of the generated questions, or if there was an error at this step last time.
 
 ### I want to generate more than 100 instructions
 Change the count flag `-c` for the number question-repsonse pairs to generate in total. The default is set to 100.
