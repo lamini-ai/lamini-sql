@@ -63,7 +63,7 @@ def generate_questions(start_index, batch_size, dataset):
 
 def get_question(llm, item):
 
-    attempts = 5
+    attempts = 10
 
     for i in range(attempts):
         try:
@@ -192,7 +192,7 @@ def load_query_data():
 
 def get_query(llm, question):
 
-    attempts = 5
+    attempts = 10
 
     for i in range(attempts):
         try:
