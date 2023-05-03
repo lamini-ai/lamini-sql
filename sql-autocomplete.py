@@ -114,7 +114,7 @@ class Question(Type):
 
 
 class NovelQuestion(Type):
-    question: str = Context("a novel question, about a different table")
+    question: str = Context("a radically different question")
 
 
 def load_spider():
