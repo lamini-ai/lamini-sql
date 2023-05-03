@@ -5,11 +5,14 @@ from llama import LLM, Type, Context
 import json
 import random
 import jsonlines
+import time
 
 import argparse
 
 
 def main():
+    random.seed(time.time())
+
     parser = argparse.ArgumentParser(
         prog="Lamini-SQL", description="Generates SQL data for LLM instruction tuning"
     )
